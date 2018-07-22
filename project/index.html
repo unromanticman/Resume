@@ -97,6 +97,7 @@
         </div>
       </div>
     </div>
+
     <div id="skill" class="row">
       <br/>
       <h1>技能掌握</h1>
@@ -383,8 +384,25 @@
     $('body').removeClass('um-theme-light');
     $('body').removeClass('um-theme-dark');
     $('body').addClass(themeName, 3000, "easeOutBounce");
+    if (themeName == 'um-theme-light') {
+      bgcolor = 0xfafafa, particleColor = 0x8c8c8c;
+    } else {
+      bgcolor = 0x282729, particleColor = 0xffffff;
+    }
+    init();
   }
 
 </script>
 
 </html>
+
+<canvas style="display: none;">
+  <script>
+    var bgcolor = 0x282729, particleColor = 0xffffff;
+  </script>
+  <script src="./assets/three/three.js"></script>
+  <script src="./assets/three/stats.min.js"></script>
+  <script src="./assets/three/Projector.js"></script>
+  <script src="./assets/three/CanvasRenderer.js"></script>
+  <script src="./assets/three/main.js"></script>
+</canvas>

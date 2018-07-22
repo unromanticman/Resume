@@ -1,4 +1,4 @@
-var SEPARATION = 200, AMOUNTX = 15, AMOUNTY = 20;
+var SEPARATION = 150, AMOUNTX = 20, AMOUNTY = 12;
       var container, stats;
       var camera, scene, renderer;
       var particles, particle, count = 0;
@@ -14,11 +14,11 @@ var SEPARATION = 200, AMOUNTX = 15, AMOUNTY = 20;
         camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
         camera.position.z = 1500;
         scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x282729);
+        scene.background = new THREE.Color(bgcolor);
         particles = new Array();
         var PI2 = Math.PI * 2;
         var material = new THREE.SpriteCanvasMaterial( {
-          color: 0xffffff,
+          color: particleColor,
           program: function ( context ) {
             context.beginPath();
             context.arc( 0, 0, 0.5, 0, PI2, true );
