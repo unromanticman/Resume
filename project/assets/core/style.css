@@ -9,14 +9,6 @@
 body {
   overflow-x: hidden; }
 
-#header {
-  background: none; }
-
-#canvas-particle {
-  position: absolute;
-  top: 0;
-  z-index: -1000; }
-
 #container {
   overflow: auto;
   overflow-y: hidden !important;
