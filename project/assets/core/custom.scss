@@ -7,15 +7,13 @@ body {
 }
 
 #header {
-  background: transparent;
+  background: none;
 }
-
 #canvas-particle {
   position: absolute;
   top: 0;
   z-index: -1000;
 }
-
 #container {
   @include themify($themes) {
     color: themed('font-color');

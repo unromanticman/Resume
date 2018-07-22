@@ -10,7 +10,7 @@ body {
   overflow-x: hidden; }
 
 #header {
-  background: transparent; }
+  background: none; }
 
 #canvas-particle {
   position: absolute;
