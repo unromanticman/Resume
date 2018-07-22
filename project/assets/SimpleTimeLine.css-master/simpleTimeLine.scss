@@ -1,0 +1,187 @@
+/* color variables */
+
+$gray100:   #d1dcdd;
+$gray200:   #8e9596;
+$gray300:   #6f7576;
+$gray400:   #383b3b;
+$gray500:   #101010;
+$red100:    #d54648;
+$red200:    #db5465;
+$orange100: #db653c;
+$green100:  #81b649;
+$purple100: #5c4f98;
+$yellow100: #ffce2a;
+$blue100:   #61a0b6;
+$white:     #fff;
+$black:     #000;
+
+/* theme */
+
+$themes: (
+  theme-gray: (
+    timeline-color: $gray300,
+    title-color: $gray300,
+    font-color: $black
+  ),
+  theme-red:(
+    timeline-color: $red200,
+    title-color: $gray300,
+    font-color: $black
+  ),
+  theme-orange:(
+    timeline-color: $orange100,
+    title-color: $gray300,
+    font-color: $black
+  ),
+  theme-yellow:(
+    timeline-color: $yellow100,
+    title-color: $gray300,
+    font-color: $black
+  ),
+  theme-green:(
+    timeline-color: $green100,
+    title-color: $gray300,
+    font-color: $black
+  ),
+  theme-blue:(
+    timeline-color: $blue100,
+    title-color: $gray300,
+    font-color: $black
+  ),
+  theme-purple:(
+    timeline-color: $purple100,
+    title-color: $gray300,
+    font-color: $black
+  )
+);
+
+/*
+ * Implementation of themes
+ */
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .simple-time-line-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+      box-sizing: border-box;    
+}
+/* style */
+.simple-time-line{
+  margin:15px;
+  position: relative;
+  @include themify($themes) {
+    color:themed('font-color');
+  }
+  list-style-type: none;
+}
+
+.simple-time-line::after{
+  left:0%;
+  content: '';
+  position: absolute;
+  width: 3px;
+  @include themify($themes) {
+    background-color: themed('timeline-color');
+  }
+  top: 5px;
+  bottom: 5px;
+  z-index:-1;
+}
+.circle {
+  margin-left:-6.4px;
+  height: 15px;
+  width: 15px;
+  background-color: $white;
+  border-radius: 50%;
+  z-index: 1;
+  @include themify($themes) {
+    border: 3px solid themed('timeline-color');
+  }
+}
+.circle.active{
+  margin-left:-6.4px;
+  height: 15px;
+  width: 15px;
+  @include themify($themes) {
+    background-color: themed('timeline-color');
+    border: 3px solid themed('timeline-color');
+  }
+  border-radius: 50%;
+  z-index: 1;
+}
+.circle.start{
+  margin-left:-4.45px;
+  height: 11px;
+  width: 11px;
+  background-color: $white;
+  border-radius: 50%;
+  z-index: 1;
+  @include themify($themes) {
+  border: 3px solid themed('timeline-color');
+  }
+}
+.circle.start.active{
+  margin-left:-4.45px;
+  height: 11px;
+  width: 11px;
+  @include themify($themes) {
+  background-color: themed('timeline-color');
+  border: 3px solid themed('timeline-color');
+  }
+  border-radius: 50%;
+  z-index: 1;   
+}
+.circle.end{
+  margin-left:-4.45px;
+  height: 11px;
+  width: 11px;
+  background-color: $white;
+  border-radius: 50%;
+  z-index: 1;
+  @include themify($themes) {
+    border: 3px solid themed('timeline-color');
+  }
+}
+.circle.end.active{
+  margin-left:-4.45px;
+  height: 11px;
+  width: 11px;
+  @include themify($themes) {
+    background-color: themed('timeline-color');
+    border: 3px solid themed('timeline-color');
+  }
+  border-radius: 50%;
+  z-index: 1;
+}
+.simple-time-line > div > .content > .title{
+  @include themify($themes) {
+    color:themed('title-color');
+  }
+  font-size:16px;
+}
+.simple-time-line > div > .content > .extra{
+  margin-top:5px;
+  font-size:15px;
+  padding-left:10px;
+}
+.simple-time-line > div > .content{
+  padding-left:30px;
+  margin-top:-19px;
+  min-height:60px;
+  padding-bottom:10px;
+}

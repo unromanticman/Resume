@@ -3,10 +3,373 @@
 
 <head>
   <link href="./assets/bootstrap/css/bootstrap.css" rel=stylesheet>
+  <script src="./assets/bootstrap/js/jquery.min.js"></script>
+  <script src="./assets/waypoint/jquery.waypoints.min.js"></script>
+  <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+  <link href="./assets/animate/animate.css" rel=stylesheet>
+  <link href="./assets/timeline/timeline.css" rel=stylesheet>
+  <link href="./assets/devicemockup/device-mockups.css" rel=stylesheet>
+  <link href="./assets/devicemockup/device-mockups.min.css" rel="stylesheet" type="text/css">
+  <script src="assets/progressbar/progressbar.js"></script>
+  <script src="assets/wow/wow.min.js"></script>
+  <script>new WOW().init();</script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="./assets/core/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+    crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Intro.</title>
 </head>
 
-<body>
+<body class="um-theme-dark">
+  <!--nav-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <b>Yu Hsiang Resume</b>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#skill">
+              技能掌握</a>
+          </li>
+          <li>
+            <a href="#master">
+              專業技能</a>
+          </li>
+          <li>
+            <a href="#work">
+              工作經歷</a>
+          </li>
+          <li>
+            <a href="#sample">
+              作品簡歷</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--./nav-->
+  <!--container-->
+  <div id="container">
+    <div id="header" class="row">
+      <div class="col-md-6">
+        <div class="title">
+          <div>
+            <i data-wow-delay="0s" class="wow animated bounceInDown fab fa-github"></i>
+            <i data-wow-delay="0.2s" class="wow animated bounceInDown fab fa-wordpress"></i>
+            <i data-wow-delay="0.4s" class="wow animated bounceInDown fas fa-envelope"></i>
+          </div>
+          <div data-wow-delay="0.6s" data-wow-duration="1.3s" class="wow animated bounceInLeft">您好！這裡是</br>Yu Hsiang 的簡歷頁面！</br>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div data-wow-duration="4.5s" data-wow-delay="0.65s" class="description wow animated fadeIn">
+          訪客您好！這裡記載著Yu Hsiang的一些經歷！
+          <br/> 我是Yu Hsiang，目前專攻前端 ( Frontend )
+          <br/> 曾在3drens物聯網、資策會教研所實習
+          <br/> 負責開發、維護，並且學習到相關專業技能！
+          <br/> 並自行開發兩套WordPress版型《Stable》、《Never Nop》
+        </div>
+        <div data-wow-duration="1.3s" data-wow-delay="1.3s" class="action wow animated bounceInRight">
+          <h2>您可以嘗試看看...</h2>
+          <button style="margin:5px;border-color:transparent; border-radius: 20px;padding:5px;width:120px;background:white;color:black;">點燈</button>
+          <button style="margin:5px;border-color:transparent; border-radius: 20px;padding:5px;width:120px;background:black;color:white;">關燈</button>
+        </div>
+      </div>
+    </div>
+    <div id="skill" class="row">
+      <br/>
+      <h1>技能掌握</h1>
+      <br/>
+      <br/>
+      <br/>
+      <div class="col-md-4">
+        <div style="margin: 0px auto;" id="progressbar1"></div>
+        <h3>響應式切版</h3>
+        <br/>
+      </div>
+      <div class="col-md-4">
+        <div style="margin: 0px auto;" id="progressbar2"></div>
+        <h3>CSS動畫特效</h3>
+        <br/>
+        <br/>
+      </div>
+      <div class="col-md-4">
+        <div style="margin: 0px auto;" id="progressbar3"></div>
+        <h3>質感的圖表呈現</h3>
+        <br/>
+        <br/>
+      </div>
+    </div>
+    <div id="master" class="row">
+      <h1>專業技能</h1>
+      <br/>
+      <br/>
+      <br/>
+      <div class="col-md-6" style="text-align: center;">
+        <div style="margin: 0px auto;" id="progressbarline1"></div>
+        <br/>
+        <br/>
+        <div style="margin: 0px auto;" id="progressbarline2"></div>
+        <br/>
+        <br/>
+        <div style="margin: 0px auto;" id="progressbarline3"></div>
+        <br/>
+        <br/>
+      </div>
+      <div class="col-md-6">
+        <div style="margin: 0px auto;" id="progressbarline4"></div>
+        <br/>
+        <br/>
+        <div style="margin: 0px auto;" id="progressbarline5"></div>
+        <br/>
+        <br/>
+        <div style="margin: 0px auto;" id="progressbarline6"></div>
+        <br/>
+        <br/>
+      </div>
+    </div>
+    <div class="row" style="text-align: center;">
+      <div class="col-md-12">
+        <br/>
+        <h1>工作經歷</h1>
+        <br/>
+      </div>
+    </div>
+    <div class="row">
+      <hr/>
+    </div>
+    <div class="work row">
+      <div class="col-md-4">
+        <img id="workimage1" data-wow-duration="1.3s" class="image-cicle animate fadeInLeft wow" src="./assets/image/3drens.png">
+      </div>
+      <div class="col-md-8" style="text-align: left;">
+        <div id="work1" data-wow-duration="1.3s" class="image-cicle animate fadeInRight wow">
+          <h3>#2018 台大創創中心 3drens三維人</h3>
+          <h3>前端工程師</h3>
+          ．後端服務管理SCSS樣式撰寫
+          <br/> ．利用React.js撰寫Server Side Render網站
+          <br/> ．drag and drop 服務頁面功能設計與實作
+          <br/> ．與node.js串API
+          <br/> ．git flow、bitbucket 迭代軟體版本控管
+          <br/> ．多人專案並行開發經驗
+          <br/> ．開發軟體code style
+          <br/> ．處理 javascript異步，callback、Promise
+          <br/> ．對於 IEEE754 format 之解碼函式
+          <br/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <hr/>
+    </div>
+    <div class="work row">
+      <div class="col-md-4">
+        <img id="workimage2" data-wow-duration="1.3s" class="image-cicle animate fadeInLeft wow" class="image-cicle" src="./assets/image/pccu.png">
+      </div>
+      <div class="col-md-8" style="text-align: left;">
+        <div id="work2" data-wow-duration="1.3s" class="image-cicle animate fadeInRight wow">
+          <h3>#2018 文大職發組</h3>
+          <h3>校友電子報負責人</h3>
+          ．HTML5/CSS 校友電子報排版
+          <br/>．校友電子報寄送
+          <br/>．疑難雜症解決
+          <br/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <hr/>
+    </div>
+    <div class="work row">
+      <div class="col-md-4">
+        <img id="workimage3" data-wow-duration="1.3s" class="image-cicle animate fadeInLeft wow" src="./assets/image/iii.png">
+      </div>
+      <div class="col-md-8" style="text-align: left;">
+        <div id="work3" data-wow-duration="1.3s" class="image-cicle animate fadeInRight wow">
+          <h3>#2016 資策會教研所</h3>
+          <h3>程式實習生</h3>
+          ．初探 mongodb 並協助優化 JAVA 系統
+          <br/> ．API 速度提升 3100% (1.7s -> 0.059s)
+          <br/> ．期間資料表內容逾 100 萬筆
+          <br/> ．網站壓力測試,檢測是否有漏接
+          <br/> ．Highcharts 圖表繪製
+        </div>
+      </div>
+    </div>
+    <div id="sample" class="row" style="text-align: center;">
+      <div class="col-md-12" style="text-align: center;">
+        <br/>
+        <h1>作品簡歷</h1>
+        <br/>
+      </div>
+    </div>
+    <div class="row" style="text-align: center;">
+      <div class="col-md-6">
+        <img data-wow-duration="1s" class="device-img animate fadeInDown wow" style="max-width:550px;" src="./assets/image/1.png"
+        />
+      </div>
+      <div class="col-md-6" style="text-align: left;">
+        <div data-wow-duration="1.3s" class="device-description animate fadeInRight wow">
+          <h2>#1 Taskill 任務擊殺排程軟體</h2>
+          <p>簡單地記錄任務並提升效率的軟體。</p>
+          <p>改善了人處理事情與規劃目標的方式</p>
+          <p>簡潔的介面體驗</p>
+          <p>RWD響應式排版，可連網之電腦、筆電、平板、手機皆可使用！</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <hr/>
+    </div>
+    <div class="row" style="text-align: center;">
+
+      <div class="col-md-6" style="text-align: right;">
+        <div data-wow-duration="1.3s" class="device-description animate fadeInLeft wow">
+          <h2>#2《Never Nop》WordPress主題設計</h2>
+          <p>符合閱讀設計之WordPress主題</p>
+          <p>以SCSS著手製作</p>
+          <p>兩欄式、灰白相間、流暢閱讀</p>
+          <p>RWD響應式排版</p>
+          <p>電腦、筆電、平板、手機螢幕皆適用!</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img data-wow-duration="1s" class="device-img animate fadeInDown wow" src="./assets/image/3.png" />
+      </div>
+    </div>
+  </div>
+  <!--./container-->
+  <div id="gotop">
+    <i class="fas fa-angle-up"></i>
+  </div>
+  <footer>
+    <br/>
+    <br/>
+    <div style="text-align: center;color:white;margin-bottom: 0px;">
+      Copyright © 2018 designed by @Yu-Hsiang
+    </div>
+    <br/>
+    <br/>
+  </footer>
 </body>
+<script>
+  $(function () {
+    $("#gotop").click(function () {
+      jQuery("html,body").animate({
+        scrollTop: 0
+      }, 1000);
+    });
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 250) {
+        $('#gotop').fadeIn("fast");
+      } else {
+        $('#gotop').stop().fadeOut("fast");
+      }
+    });
+  });
+  // progressbar.js@1.0.0 version is used
+  // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
+  function drawProgressbar(id, rate) {
+    var bar = new ProgressBar.Circle(id, {
+      color: '#ea8706',
+      // This has to be the same size as the maximum width to
+      // prevent clipping
+      strokeWidth: 5,
+      trailWidth: 3,
+      easing: 'easeInOut',
+      duration: 2000,
+      text: {
+        autoStyleContainer: false
+      },
+      from: { color: '#ff9304', width: 2 },
+      to: { color: '#ff9304', width: 4 },
+      // Set default step function for all animate calls
+      step: function (state, circle) {
+        circle.path.setAttribute('stroke', state.color);
+        circle.path.setAttribute('stroke-width', state.width);
+
+        var value = Math.round(circle.value() * 100);
+        if (value === 0) {
+          circle.setText('');
+        } else {
+          circle.setText(value + '/100');
+        }
+
+      }
+    });
+    bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+    bar.text.style.fontSize = '2rem';
+    bar.animate(rate);  // Number from 0.0 to 1.0
+  }
+  function drawProgressbarLine(id, rate, text, color) {
+    // progressbar.js@1.0.0 version is used
+    // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
+
+    var bar = new ProgressBar.Line(id, {
+      strokeWidth: 4,
+      easing: 'easeInOut',
+      duration: 1400,
+      color: color,
+      trailColor: '#eee',
+      trailWidth: 4,
+      svgStyle: { width: '100%', height: '100%' },
+      text: {
+        style: {
+          // Text color.
+          // Default: same as stroke color (options.color)
+          color: color,
+          position: 'absolute',
+          right: '0',
+          top: '25px',
+          padding: 0,
+          margin: 0,
+          transform: null
+        },
+        autoStyleContainer: false
+      },
+      from: { color: '#FFEA82' },
+      to: { color: '#ED6A5A' },
+      step: (state, bar) => {
+        bar.setText(Math.round(bar.value() * 100) + ' % ' + text);
+      }
+    });
+    bar.animate(rate);  // Number from 0.0 to 1.0
+  }
+
+  new Waypoint({
+    element: document.getElementById('skill'),
+    handler: function () {
+      drawProgressbar(progressbar1, 0.95);
+      drawProgressbar(progressbar2, 0.85);
+      drawProgressbar(progressbar3, 0.8);
+      this.destroy();
+    }, offset: '50%'
+  })
+  new Waypoint({
+    element: document.getElementById('master'),
+    handler: function () {
+      drawProgressbarLine(progressbarline1, 0.95, '    HTML5', '#ff9304');
+      drawProgressbarLine(progressbarline2, 0.8, '    Photoshop', '#ff9304');
+      drawProgressbarLine(progressbarline3, 0.9, '    SCSS/CSS/Bootstrap', '#ff9304');
+      drawProgressbarLine(progressbarline4, 0.9, '   JQuery', '#ff9304');
+      drawProgressbarLine(progressbarline5, 0.75, '    ReactJS', '#ff9304');
+      drawProgressbarLine(progressbarline6, 0.75, '    Vue.js', '#ff9304');
+      this.destroy()
+    }, offset: '50%'
+  })
+</script>
 
 </html>
