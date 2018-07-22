@@ -1,8 +1,8 @@
-var SEPARATION = 150, AMOUNTX = 20, AMOUNTY = 12;
+var SEPARATION = 200, AMOUNTX = 30, AMOUNTY = 30;
       var container, stats;
       var camera, scene, renderer;
       var particles, particle, count = 0;
-      var mouseX = 0,mouseY = -301.5;
+      var mouseX = 100, mouseY = -550;
       var windowHalfX = window.innerWidth / 2;
       var windowHalfY = window.innerHeight / 2;
       init();
