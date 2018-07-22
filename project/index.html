@@ -66,9 +66,15 @@
       <div class="col-md-6">
         <div class="title">
           <div>
-            <i data-wow-delay="0s" class="wow animated bounceInDown fab fa-github"></i>
-            <i data-wow-delay="0.2s" class="wow animated bounceInDown fab fa-wordpress"></i>
-            <i data-wow-delay="0.4s" class="wow animated bounceInDown fas fa-envelope"></i>
+            <a href="https://github.com/unromanticman" target="_blank">
+              <i data-wow-delay="0s" class="wow animated bounceInDown fab fa-github"></i>
+            </a>
+            <a href="https://never-nop.com" target="_blank">
+              <i data-wow-delay="0.2s" class="wow animated bounceInDown fab fa-wordpress"></i>
+            </a>
+            <a href="mailto:umworksite@gmail.com">
+              <i data-wow-delay="0.4s" class="wow animated bounceInDown fas fa-envelope"></i>
+            </a>
           </div>
           <div data-wow-delay="0.6s" data-wow-duration="1.3s" class="wow animated bounceInLeft">您好！這裡是</br>Yu Hsiang 的簡歷頁面！</br>
           </div>
@@ -84,8 +90,10 @@
         </div>
         <div data-wow-duration="1.3s" data-wow-delay="1.3s" class="action wow animated bounceInRight">
           <h2>您可以嘗試看看...</h2>
-          <button style="margin:5px;border-color:black; border-radius: 20px;padding:5px;width:120px;background:white;color:black;" onclick="changeTheme('um-theme-light')">點燈</button>
-          <button style="margin:5px;border-color:transparent; border-radius: 20px;padding:5px;width:120px;background:black;color:white;" onclick="changeTheme('um-theme-dark')">關燈</button>
+          <button style="margin:5px;border-color:black; border-radius: 20px;padding:5px;width:120px;background:white;color:black;"
+            onclick="changeTheme('um-theme-light')">點燈</button>
+          <button style="margin:5px;border-color:transparent; border-radius: 20px;padding:5px;width:120px;background:black;color:white;"
+            onclick="changeTheme('um-theme-dark')">關燈</button>
         </div>
       </div>
     </div>
@@ -141,7 +149,7 @@
         <br/>
       </div>
     </div>
-    <div class="row" style="text-align: center;">
+    <div id="work" class="row" style="text-align: center;">
       <div class="col-md-12">
         <br/>
         <h1>工作經歷</h1>
@@ -374,7 +382,7 @@
   function changeTheme(themeName) {
     $('body').removeClass('um-theme-light');
     $('body').removeClass('um-theme-dark');
-    $('body').addClass(themeName, 3000, "easeOutBounce" );
+    $('body').addClass(themeName, 3000, "easeOutBounce");
   }
 
 </script>

@@ -22,6 +22,12 @@ body {
   }
 }
 
+a {
+  @include themify($themes) {
+    color: themed('font-color');
+  }
+}
+
 #skill {
   text-align: center;
   padding-left: 180px;

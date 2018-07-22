@@ -22,6 +22,11 @@ body {
 .um-theme-light .row {
   background: #fafafa; }
 
+.um-theme-dark a {
+  color: #ffffff; }
+.um-theme-light a {
+  color: #282729; }
+
 #skill {
   text-align: center;
   padding-left: 180px;
