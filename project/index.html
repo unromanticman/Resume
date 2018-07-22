@@ -21,7 +21,7 @@
   <title>Intro.</title>
 </head>
 
-<body class="um-theme-dark">
+<body class="um-theme-light">
   <!--nav-->
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -84,8 +84,8 @@
         </div>
         <div data-wow-duration="1.3s" data-wow-delay="1.3s" class="action wow animated bounceInRight">
           <h2>您可以嘗試看看...</h2>
-          <button style="margin:5px;border-color:transparent; border-radius: 20px;padding:5px;width:120px;background:white;color:black;">點燈</button>
-          <button style="margin:5px;border-color:transparent; border-radius: 20px;padding:5px;width:120px;background:black;color:white;">關燈</button>
+          <button style="margin:5px;border-color:black; border-radius: 20px;padding:5px;width:120px;background:white;color:black;" onclick="changeTheme('um-theme-light')">點燈</button>
+          <button style="margin:5px;border-color:transparent; border-radius: 20px;padding:5px;width:120px;background:black;color:white;" onclick="changeTheme('um-theme-dark')">關燈</button>
         </div>
       </div>
     </div>
@@ -370,6 +370,13 @@
       this.destroy()
     }, offset: '50%'
   })
+
+  function changeTheme(themeName) {
+    $('body').removeClass('um-theme-light');
+    $('body').removeClass('um-theme-dark');
+    $('body').addClass(themeName, 3000, "easeOutBounce" );
+  }
+
 </script>
 
 </html>
