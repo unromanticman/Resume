@@ -10,6 +10,9 @@ body {
   @include themify($themes) {
     color: themed('font-color');
   }
+  overflow:auto;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
 }
 
 .rounded-circle {

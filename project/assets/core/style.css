@@ -9,10 +9,14 @@
 body {
   overflow-x: hidden; }
 
-.um-theme-dark #container {
-  color: #ffffff; }
-.um-theme-light #container {
-  color: #282729; }
+#container {
+  overflow: auto;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important; }
+  .um-theme-dark #container {
+    color: #ffffff; }
+  .um-theme-light #container {
+    color: #282729; }
 
 .rounded-circle {
   border-radius: 50%; }
