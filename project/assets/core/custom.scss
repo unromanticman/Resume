@@ -61,9 +61,10 @@ a {
     color: themed('font-color');
   }
   font-size: 40px;
-  padding-top: 180px;
+  padding-top: 130px;
   padding-left: 80px;
   font-size: 40px;
+  min-height:400px;
 }
 
 .highlight {
@@ -271,9 +272,10 @@ nav {
 @media (max-width: 767px) {
   .title {
     font-size: 30px;
-    padding-top: 80px;
+    padding-top: 30px;
     text-align: center;
     padding-left: 0px;
+    min-height: 0px;
   }
   .description {
     font-size: 15px;
@@ -282,7 +284,7 @@ nav {
   }
   .action {
     text-align: center;
-    padding-top: 10px;
+    padding-top: 0px;
   }
   #skill {
     text-align: center;
