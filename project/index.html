@@ -358,27 +358,24 @@
     bar.animate(rate);  // Number from 0.0 to 1.0
   }
 
-  new Waypoint({
-    element: document.getElementById('skill'),
-    handler: function () {
+  $(document).ready(function () {
+    $('#skill').waypoint(function (event, direction) {
       drawProgressbar(progressbar1, 0.95);
       drawProgressbar(progressbar2, 0.85);
       drawProgressbar(progressbar3, 0.8);
       this.destroy();
-    }, offset: '50%'
-  })
-  new Waypoint({
-    element: document.getElementById('master'),
-    handler: function () {
+    }, { offset: '50%' });
+    $('#master').waypoint(function (event, direction) {
       drawProgressbarLine(progressbarline1, 0.95, '    HTML5', '#ff9304');
       drawProgressbarLine(progressbarline2, 0.8, '    Photoshop', '#ff9304');
       drawProgressbarLine(progressbarline3, 0.9, '    SCSS/CSS/Bootstrap', '#ff9304');
       drawProgressbarLine(progressbarline4, 0.9, '   JQuery', '#ff9304');
       drawProgressbarLine(progressbarline5, 0.75, '    ReactJS', '#ff9304');
       drawProgressbarLine(progressbarline6, 0.75, '    Vue.js', '#ff9304');
-      this.destroy()
-    }, offset: '50%'
-  })
+      this.destroy();
+    }, { offset: '50%' });
+  });
+
 
   function changeTheme(themeName) {
     $('body').removeClass('um-theme-light');
