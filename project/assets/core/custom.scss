@@ -59,6 +59,18 @@ a {
   font-size: 20px;
 }
 
+.topindex {
+  position: relative;
+  z-index: 999;
+}
+
+#canvas-particle {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+
 .title {
   @include themify($themes) {
     color: themed('font-color');

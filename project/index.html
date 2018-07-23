@@ -20,10 +20,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Intro.</title>
 </head>
-
 <body class="um-theme-dark">
   <!--nav-->
-  <nav class="navbar navbar-default">
+  <nav class="topindex navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -63,7 +62,7 @@
   <!--container-->
   <div id="container">
     <div id="header" class="row">
-      <div class="col-md-6">
+      <div class="topindex col-md-6">
         <div class="title">
           <div>
             <a href="https://github.com/unromanticman" target="_blank">
@@ -80,7 +79,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="topindex col-md-6">
         <div data-wow-duration="4.5s" data-wow-delay="0.65s" class="description wow animated fadeIn">
           訪客您好！這裡記載著Yu Hsiang的一些經歷！
           <br/> 我是Yu Hsiang，目前專攻前端 ( Frontend )
@@ -383,8 +382,25 @@
     $('body').removeClass('um-theme-light');
     $('body').removeClass('um-theme-dark');
     $('body').addClass(themeName, 3000, "easeOutBounce");
+    if (themeName == 'um-theme-light') {
+      bgcolor = 0xfafafa, particleColor = 0x8c8c8c;
+    } else {
+      bgcolor = 0x282729, particleColor = 0xffffff;
+    }
+    init();
   }
 
 </script>
+<canvas style="display: none;">
+
+  <script>
+    var bgcolor = 0x282729, particleColor = 0xffffff;
+  </script>
+  <script src="./assets/three/three.js"></script> +
+  <script src="./assets/three/stats.min.js"></script> +
+  <script src="./assets/three/Projector.js"></script> +
+  <script src="./assets/three/CanvasRenderer.js"></script> +
+  <script src="./assets/three/main.js"></script> +
+</canvas>
 
 </html>
