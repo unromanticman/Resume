@@ -18,6 +18,8 @@
   <link href="./assets/core/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
     crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./assets/jQuery-Progress-Bar-Plugin-LineProgressbar/jquery.lineProgressbar.min.css">
+  <script src="./assets/jQuery-Progress-Bar-Plugin-LineProgressbar/jquery.lineProgressbar.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Intro.</title>
 </head>
@@ -289,94 +291,91 @@
       }
     });
   });
-  // progressbar.js@1.0.0 version is used
-  // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
-  function drawProgressbar(id, rate) {
+  function drawCircleProgressbar(id, rate) {
     var bar = new ProgressBar.Circle(id, {
       color: '#ea8706',
       // This has to be the same size as the maximum width to
       // prevent clipping
-      strokeWidth: 5,
-      trailWidth: 3,
+      strokeWidth: 4,
+      trailWidth: 4,
       easing: 'easeInOut',
-      duration: 2000,
+      duration: 1400,
       text: {
         autoStyleContainer: false
       },
-      from: { color: '#ff9304', width: 2 },
-      to: { color: '#ff9304', width: 4 },
+      from: { color: '#ea8706', width: 4 },
+      to: { color: '#ea8706', width: 4 },
       // Set default step function for all animate calls
       step: function (state, circle) {
         circle.path.setAttribute('stroke', state.color);
         circle.path.setAttribute('stroke-width', state.width);
-
         var value = Math.round(circle.value() * 100);
         if (value === 0) {
           circle.setText('');
         } else {
           circle.setText(value + '/100');
         }
-
       }
     });
     bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
     bar.text.style.fontSize = '2rem';
     bar.animate(rate);  // Number from 0.0 to 1.0
   }
-  function drawProgressbarLine(id, rate, text, color) {
-    // progressbar.js@1.0.0 version is used
-    // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
 
-    var bar = new ProgressBar.Line(id, {
-      strokeWidth: 4,
-      easing: 'easeInOut',
-      duration: 1400,
-      color: color,
-      trailColor: '#eee',
-      trailWidth: 4,
-      svgStyle: { width: '100%', height: '100%' },
-      text: {
-        style: {
-          // Text color.
-          // Default: same as stroke color (options.color)
-          color: color,
-          position: 'absolute',
-          right: '0',
-          top: '25px',
-          padding: 0,
-          margin: 0,
-          transform: null
-        },
-        autoStyleContainer: false
-      },
-      from: { color: '#FFEA82' },
-      to: { color: '#ED6A5A' },
-      step: (state, bar) => {
-        bar.setText(Math.round(bar.value() * 100) + ' % ' + text);
-      }
-    });
-    bar.animate(rate);  // Number from 0.0 to 1.0
-  }
-  drawProgressbar(progressbar1, 0.95);
-  drawProgressbar(progressbar2, 0.85);
-  drawProgressbar(progressbar3, 0.8);
-  drawProgressbarLine(progressbarline1, 0.95, '    HTML5', '#ff9304');
-  drawProgressbarLine(progressbarline2, 0.8, '    Photoshop', '#ff9304');
-  drawProgressbarLine(progressbarline3, 0.9, '    SCSS/CSS/Bootstrap', '#ff9304');
-  drawProgressbarLine(progressbarline4, 0.9, '   JQuery', '#ff9304');
-  drawProgressbarLine(progressbarline5, 0.75, '    ReactJS', '#ff9304');
-  drawProgressbarLine(progressbarline6, 0.75, '    Vue.js', '#ff9304');
+
   $(document).ready(function () {
     $('#skill').waypoint(function (event, direction) {
-      alert('goin');
+      drawCircleProgressbar(progressbar1, 0.95);
+      drawCircleProgressbar(progressbar2, 0.85);
+      drawCircleProgressbar(progressbar3, 0.8);
       this.destroy();
     }, { offset: '50%' });
     $('#master').waypoint(function (event, direction) {
-
+      $('#progressbarline1').LineProgressbar({
+        percentage: 95,
+        radius: '0px',
+        height: '12px',
+        text:'HTML5',
+        fillBackgroundColor: '#ea8706'
+      });
+      $('#progressbarline2').LineProgressbar({
+        percentage: 80,
+        radius: '0px',
+        height: '12px',
+        text: 'Photoshop',
+        fillBackgroundColor: '#ea8706'
+      });
+      $('#progressbarline3').LineProgressbar({
+        percentage: 90,
+        radius: '0px',
+        height: '12px',
+        text: 'SCSS/CSS/Bootstrap',
+        fillBackgroundColor: '#ea8706'
+      });
+      $('#progressbarline4').LineProgressbar({
+        percentage: 90,
+        radius: '0px',
+        height: '12px',
+        text: 'JQuery',
+        fillBackgroundColor: '#ea8706'
+      });
+      $('#progressbarline5').LineProgressbar({
+        percentage: 75,
+        radius: '0px',
+        height: '12px',
+        text: 'ReactJS',
+        fillBackgroundColor: '#ea8706'
+      });
+      $('#progressbarline6').LineProgressbar({
+        percentage: 75,
+        radius: '0px',
+        height: '12px',
+        text: 'Vue.js',
+        fillBackgroundColor: '#ea8706'
+      });
       this.destroy();
     }, { offset: '50%' });
   });
-
 
   function changeTheme(themeName) {
     $('body').removeClass('um-theme-light');
