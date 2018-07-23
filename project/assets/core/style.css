@@ -58,11 +58,12 @@ body {
   position: relative;
   z-index: 999; }
 
-#canvas-particle {
+#canvas-particle > canvas {
   width: 100%;
   position: absolute;
   top: 0;
-  z-index: 0; }
+  z-index: 0;
+  max-height: 450px; }
 
 .title {
   font-size: 40px;
