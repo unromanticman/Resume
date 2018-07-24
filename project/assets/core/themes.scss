@@ -4,13 +4,19 @@ $themes: (
     font-color:$white,
     background:$dulldrak,
     highlight:$orange,
-    gotop:$orange
+    otherbackground:$dark200,
+    othercolor:$white,
+    footerbackground:$dark100,
+    footercolor:$white
   ),
   theme-light: (
     font-color:$dulldrak,
     background:$graywhite,
     highlight:$orange,
-    gotop:$orange
+    otherbackground:$dark200,
+    othercolor:$white,
+    footerbackground:$dark100,
+    footercolor:$white
   )
 );
 /*

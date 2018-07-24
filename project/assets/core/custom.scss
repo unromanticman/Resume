@@ -108,23 +108,20 @@ hr {
 }
 
 #gotop {
-  display: none;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  visibility: visible;
+  right: 30px;
+  color: #cdcdcd;
+  height: auto;
   position: fixed;
-  right: 20px;
-  bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 20px;
-  @include themify($themes) {
-    background: themed('gotop');
-  }
-  color: white;
-  cursor: pointer;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  bottom: 60px;
+  margin: 0;
+  z-index: 10000;
+  -webkit-transition: all .3s ease 0s;
+  -moz-transition: all .3s ease 0s;
+  -o-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
 }
 
 .image-cicle {
@@ -133,12 +130,61 @@ hr {
   border-radius: 3px;
 }
 
-footer {
+.other {
   @include themify($themes) {
-    background: themed('background');
+    background: themed('otherbackground');
+    color: themed('othercolor');
   }
-  min-height:30px;
-  height:auto;
+  text-align: center;
+}
+
+.topcircle>i {
+  font-size: 22px;
+  color: #b0b0b0;
+  line-height: 52px;
+  padding-left: 14.5px;
+  padding-bottom: 3px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.topcircle:hover {
+  background: #e8e8e8;
+  -webkit-transition: all .2s ease 0s;
+  -moz-transition: all .2s ease 0s;
+  -o-transition: all .2s ease 0s;
+}
+
+.topcircle {
+  -webkit-transition: all .2s ease 0s;
+  -moz-transition: all .2s ease 0s;
+  -o-transition: all .2s ease 0s;
+  width: 52px !important;
+  height: 52px !important;
+  line-height: 52px;
+  text-decoration: none;
+  -o-border-radius: 52px;
+  -moz-border-radius: 52px;
+  -webkit-border-radius: 52px;
+  border-radius: 52px;
+  border: 2px solid #e8e8e8;
+  background: 0 0;
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+}
+
+.copyright {
+  @include themify($themes) {
+    background: themed('footerbackground');
+    color: themed('footercolor');
+  }
+  padding-top:15px;
+  padding-bottom: 15px;
+  text-align: center;
 }
 
 #progressbar1 {
@@ -286,6 +332,10 @@ nav {
 }
 
 @media (max-width: 767px) {
+  #gotop {
+    right: 14px;
+    bottom: 24px;
+  }
   .title {
     font-size: 30px;
     padding-top: 30px;
